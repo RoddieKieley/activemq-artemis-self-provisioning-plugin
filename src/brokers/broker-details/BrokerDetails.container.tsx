@@ -16,6 +16,7 @@ import {
   QueuesContainer,
   TopicsContainer,
   OverviewContainer,
+  StatusContainer,
 } from './components';
 import { AMQBrokerModel, K8sResourceCommon } from '../../utils';
 import { BrokerDetailsBreadcrumb } from '../../shared-components/BrokerDetailsBreadcrumb';
@@ -103,6 +104,12 @@ const BrokerDetailsPage: FC<BrokerDetailsProps> = ({ match }) => {
               title={<TabTitleText>{t('topics')}</TabTitleText>}
             >
               <TopicsContainer />
+            </Tab>
+            <Tab
+              eventKey={5}
+              title={<TabTitleText>{t('status')}</TabTitleText>}
+            >
+              <StatusContainer />
             </Tab>
           </Tabs>
         </div>

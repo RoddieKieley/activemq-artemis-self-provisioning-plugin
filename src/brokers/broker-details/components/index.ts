@@ -3,3 +3,4 @@ export * from './Queues';
 export * from './Clients';
 export * from './Topics';
 export * from './Overview';
+export * from './Status';
