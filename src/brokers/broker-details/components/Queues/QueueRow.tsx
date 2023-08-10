@@ -3,7 +3,7 @@ import {
   RowProps,
   TableData,
   TableColumn,
-  Timestamp,
+  // Timestamp,
 } from '@openshift-console/dynamic-plugin-sdk';
 import { Queue } from './Queues.container';
 import { useTranslation } from '../../../../i18n';
@@ -17,8 +17,7 @@ export const QueueRow: FC<QueueRowProps> = ({
   activeColumnIDs,
   columns,
 }) => {
-  const { name, routingType, autoCreated, autoDelete } =
-    obj;
+  const { name, routingType, autoCreated, autoDelete } = obj;
   const { t } = useTranslation();
   return (
     <>
