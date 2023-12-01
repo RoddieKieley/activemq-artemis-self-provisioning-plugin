@@ -56,7 +56,9 @@ export const useGetQueues = () => {
     const defaultProtocol = 'http';
 
     // could also be username@password after the ://
-    const defaultUsernameColonPasswordAt = '';
+    // const defaultUsernameColonPassword = '';
+    // const defaultUsernameColonPassword = 'admin:admin';
+    // let defaultUsernameColonPassword64 = '';
 
     // If specified, the fully qualified Pod hostname will be "<hostname>.<subdomain>.<pod namespace>.svc.<cluster domain>". If not specified, the pod will not have a domainname at all.
     // e.g. example1-ss-1.example1-hdls-svc.amq1.svc.cluster.local
@@ -88,8 +90,21 @@ export const useGetQueues = () => {
     // however this should be fixed
     const defaultBrokerName = '0.0.0.0';
 
+    // if (defaultUsernameColonPassword.length > 0)
+    // {
+    //   defaultUsernameColonPassword64 = btoa(
+    //     defaultUsernameColonPassword,
+    //   );
+    // }
+
     // const url = `http://localhost:8161/console/jolokia/exec/org.apache.activemq.artemis:broker="0.0.0.0"/${LIST_QUEUES_SIG}/${filterQuery}/${page}/${perPage}`;
-    const url = `${defaultProtocol}://${defaultUsernameColonPasswordAt}${defaultHostname}:${defaultPort}/${defaultJolokiaEndpoint}/exec/org.apache.activemq.artemis:broker="${defaultBrokerName}"/${LIST_QUEUES_SIG}/${filterQuery}/${page}/${perPage}`;
-    return await consoleFetchJSON(url);
+    //const url = `${defaultProtocol}://${defaultUsernameColonPassword}${defaultHostname}:${defaultPort}/${defaultJolokiaEndpoint}/exec/org.apache.activemq.artemis:broker="${defaultBrokerName}"/${LIST_QUEUES_SIG}/${filterQuery}/${page}/${perPage}`;
+    const url = `${defaultProtocol}://${defaultHostname}:${defaultPort}/${defaultJolokiaEndpoint}/exec/org.apache.activemq.artemis:broker="${defaultBrokerName}"/${LIST_QUEUES_SIG}/${filterQuery}/${page}/${perPage}`;
+    return await consoleFetchJSON(url, 'GET', {
+      headers: {
+        Accept: 'application/json',
+        Authorization: 'Basic YWRtaW46YWRtaW4=',
+      },
+    });
   };
 };
