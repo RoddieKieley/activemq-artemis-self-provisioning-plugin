@@ -34,9 +34,9 @@
   {
     "type": "console.navigation/section",
     "properties": {
-      "id": "activemq",
+      "id": "messaging",
       "perspective": "admin",
-      "name": "ActiveMQ Artemis",
+      "name": "Messaging",
       "dataAttributes": { "data-quickstart-id": "qs-nav-home" }
     }
   },
@@ -44,10 +44,50 @@
     "type": "console.navigation/href",
     "properties": {
       "id": "brokers",
-      "name": "ActiveMQ Artemis Self Provisioning",
+      "name": "Brokers",
       "href": "/k8s/all-namespaces/brokers",
       "perspective": "admin",
-      "section": "activemq"
+      "section": "messaging"
+    }
+  },
+  {
+    "type": "console.navigation/href",
+    "properties": {
+      "id": "clients",
+      "name": "Clients",
+      "href": "/k8s/all-namespaces/brokers",
+      "perspective": "admin",
+      "section": "messaging"
+    }
+  },
+  {
+    "type": "console.navigation/href",
+    "properties": {
+      "id": "addresses",
+      "name": "Addresses",
+      "href": "/k8s/all-namespaces/brokers",
+      "perspective": "admin",
+      "section": "messaging"
+    }
+  },
+  {
+    "type": "console.navigation/href",
+    "properties": {
+      "id": "security",
+      "name": "Security",
+      "href": "/k8s/all-namespaces/brokers",
+      "perspective": "admin",
+      "section": "messaging"
+    }
+  },
+  {
+    "type": "console.navigation/href",
+    "properties": {
+      "id": "resources",
+      "name": "Resources",
+      "href": "/k8s/all-namespaces/brokers",
+      "perspective": "admin",
+      "section": "messaging"
     }
   }
 ]
